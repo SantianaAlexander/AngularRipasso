@@ -1,1 +1,3 @@
-<p>lista-pokemon works!</p>
+<div class="button-container">
+    <button routerLink="/pokemon/{{element.pokemon.name}}" class="button-18" *ngFor="let element of pokedata.pokemon">{{ element.pokemon.name }}</button>
+</div>

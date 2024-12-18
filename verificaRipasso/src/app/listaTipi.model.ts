@@ -1,12 +1,12 @@
-export interface Root {
-    count: number
-    next: string
-    previous: any
-    results: listaTipi[]
-  }
-  
-  export interface listaTipi {
-    name: string
-    url: string
-  }
+export interface ListaTipi {
+  count: number
+  next: string
+  previous: any
+  results: Result[]
+}
+
+export interface Result {
+  name: string
+  url: string
+}
   
