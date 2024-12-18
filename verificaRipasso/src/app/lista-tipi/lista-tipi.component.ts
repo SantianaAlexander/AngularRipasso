@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tipi } from './listaTipi.model';
+import { ListaPoke } from './listaTipiPoke.model';
 
 @Component({
   selector: 'app-lista-tipi',
@@ -10,7 +11,9 @@ import { Tipi } from './listaTipi.model';
 })
 export class ListaTipiComponent {
   tipidata! : Tipi[]
+  pokedata! : ListaPoke[]
   o! : Observable<any>
+  opoke! : Observable<any>
   loading! : boolean
 
   constructor(private http: HttpClient) {
@@ -19,9 +22,16 @@ export class ListaTipiComponent {
     this.o.subscribe(this.getData);
   }
 
+  
+
   getData = (d: any) => {
     console.log(d); 
     this.tipidata = d.results;
     this.loading = false;
   }
+
+  makeRequest(): void {
+    
+  }
+
 }
