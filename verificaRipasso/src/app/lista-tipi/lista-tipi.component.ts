@@ -10,7 +10,7 @@ import { Tipi } from './listaTipi.model';
 })
 export class ListaTipiComponent {
   tipidata! : Tipi[]
-  o! : Observable<Tipi[]>
+  o! : Observable<any>
   loading! : boolean
 
   constructor(private http: HttpClient) {
@@ -19,10 +19,9 @@ export class ListaTipiComponent {
     this.o.subscribe(this.getData);
   }
 
-  getData = (d : Tipi[]) =>
-    {
-      console.log(d);
-      this.tipidata = d;
-      this.loading = false;
-    }
+  getData = (d: any) => {
+    console.log(d); 
+    this.tipidata = d.results;
+    this.loading = false;
+  }
 }
